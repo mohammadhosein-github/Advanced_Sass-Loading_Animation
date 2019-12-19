@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Raleway:400,600,700,800&display=swap");
+$background-color: #000;
+$btn-border-color: #000;
+
+
+// ------ text-color ------
+
+@if lightness($background-color)>=50% {
+    $text-color: #000;
+}
+
+@else {
+    $text-color: #fff;
+}
+
+// ------ btn ------
+@mixin my-btn($paddingY: 10px,
+    $paddingX: 30px,
+    $background-color: transparent) {
+    border: 3px solid btn-border-color();
+    padding: $paddingY $paddingX;
+    background-color: $background-color;
+}
+
+@function btn-border-color() {
+    @if lightness($background-color)>50% {
+        @return darken($btn-border-color, 20);
+    }
+
+    @else {
+        @return lighten($btn-border-color, 20);
+    }
+}
+
+
+
+
+
+
+// ------ settings ------
+body {
+    font-family: "Raleway", sans-serif;
+}
+
+h1 {
+    font-family: "Noto Serif", serif;
+}
+
+h1,
+h3,
+h5 {
+    text-transform: uppercase;
+}
+
+p {
+    text-transform: capitalize;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    color: $text-color;
+}
+
+
+
+
+
+// ------ Sections ------
+header {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("./media/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 0;
+    }
+
+    nav>* {
+        z-index: 99;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12pt 20pt;
+
+        .banner {
+            img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        .book {
+            @include my-btn();
+        }
+    }
+}
