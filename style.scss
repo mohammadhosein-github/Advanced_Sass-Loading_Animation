@@ -2,16 +2,33 @@
 $background-color: #000;
 $btn-border-color: #000;
 
+// ------ Break-Points ------
+@mixin sm-size {
+    @media(max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin md-size {
+    @media(max-width: 992px) {
+        @content;
+    }
+}
+
+
+
 
 // ------ text-color ------
+@function text-color($color) {
+    @if (lightness($color)>50%) {
+        @return #000;
+    }
 
-@if lightness($background-color)>=50% {
-    $text-color: #000;
+    @else {
+        @return #fff;
+    }
 }
 
-@else {
-    $text-color: #fff;
-}
 
 // ------ btn ------
 @mixin my-btn($paddingY: 10px,
@@ -49,17 +66,18 @@ h1 {
 h1,
 h3,
 h5 {
+    color: text-color($background-color);
     text-transform: uppercase;
 }
 
 p {
     text-transform: capitalize;
+    color: text-color($background-color);
 }
 
 a {
-    color: #fff;
+    color: text-color($background-color);
     text-decoration: none;
-    color: $text-color;
 }
 
 
@@ -67,7 +85,7 @@ a {
 
 
 // ------ Sections ------
-header {
+.header {
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -75,6 +93,7 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
+    z-index: 0;
 
     &::after {
         content: "";
@@ -83,12 +102,12 @@ header {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
     }
 
-    nav>* {
-        z-index: 99;
+    &>* {
+        z-index: 10;
     }
 
     nav {
@@ -108,4 +127,43 @@ header {
             @include my-btn();
         }
     }
+
+    .text-area {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        width: 100%;
+
+        @include sm-size() {
+            padding: 0 5%;
+        }
+
+        h1 {
+            position: relative;
+            text-align: center;
+
+            span {
+                writing-mode: vertical-lr;
+                position: absolute;
+                top: 50%;
+                right: 3%;
+                transform: translateY(-50%);
+                font-size: 12px;
+            }
+        }
+
+        p {
+            max-width: 300px;
+            margin: 0 auto 0 10%;
+            text-align: left;
+
+            @include sm-size() {
+                margin: 0;
+            }
+
+        }
+    }
+
 }
