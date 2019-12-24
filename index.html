@@ -13,8 +13,28 @@
 
 <body>
 
+    <div class="loading-animation">
+        <span class="word-1">j</span>
+        <span class="word-2">u</span>
+        <span class="word-3">s</span>
+        <span class="word-4">t</span>
+        &nbsp;
+        <span class="word-5">a</span>
+        &nbsp;
+        <span class="word-6">m</span>
+        <span class="word-7">o</span>
+        <span class="word-8">m</span>
+        <span class="word-9">e</span>
+        <span class="word-10">n</span>
+        <span class="word-11">t</span>
+        &nbsp;
+        <span class="word-12">.</span>
+        <span class="word-13">.</span>
+        <span class="word-14">.</span>
+    </div>
+
     <!-- ****** Header ****** -->
-    <header class="header">
+    <header>
         <nav>
             <a href="#" class="banner">
                 <img src="./media/logo.png" alt="bar_logo">
@@ -25,26 +45,129 @@
         </nav>
         <div class="text-area">
             <h1>
-                title for header
-                <span>scroll</span>
+                <span class="first-letter">p</span>int <span class="first-letter">h</span>ouse
+                <span class="scroll">scroll</span>
             </h1>
             <p>
-                OPEN TODAY
+                <span>OPEN TODAY</span>
                 <br>
+                <span>Bar // 18:00 - 03:00</span>
+                <span>Restaurant // 14:00 - 01:00</span>
                 <br>
-                Bar // 18:00 - 03:00
-                <br>
-                Restaurant // 14:00 - 01:00
-                <br><br>
-                Find Us
+                <span>Find Us</span>
             </p>
         </div>
     </header>
 
+    <main>
+        <!-- ****** Solid Background Section -->
+        <section class="sbs w-100">
+            <div class="container">
+                <div class="col-12 text-center title-area">
+                    <span class="title-icon">^^^</span>
+                    <h3>drink high above call lane street. it's there that you'll find our door - only if you look
+                        carefully.</h3>
+                </div>
+                <div class="row images">
+                    <div class="col-md-4 left-side">
+                        <div class="text-area h5-title">
+                            <span class="title-icon">^^^</span>
+                            <h5>drink</h5>
+                        </div>
+                        <div class="img-container">
+                            <img src="./media/drink-1.jpg" alt="beer_botel" class="w-100">
+                        </div>
+                    </div>
+                    <div class="col-md-5 right-side">
+                        <div class="img-container">
+                            <img src="./media/1.jpg" alt="two_tequila" class="w-100">
+                        </div>
+                        <div class="text-area">
+                            <h5>MAKING THE BEST BEER POSSIBLE</h5>
+                            <p>We are devoted to the fabricate and commercialization of hardware for the generation of
+                                specialty brew. Monsequntur magni dolores eonqui ratione voluptate msequise kertyias
+                                nesciunt, neque porro quisquam seridolore nuyfasas. visit to have best possible
+                                experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- ****** Different Class Of Drink ****** -->
+        <section class="dcod w-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h3>a different class of drink.</h3>
+                        <a href="#">bar menu <span>: :</span></a>
+                        <a href="#">restaurant menu <span>: :</span></a>
+                    </div>
+                </div>
+                <div class="row flex-row-reverse">
+                    <div class="col-md-5">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo aspernatur nam tempore, sed
+                            asperiores, nemo alias cupiditate laborum provident officia at accusantium, dignissimos quis
+                            quisquam numquam quam sunt enim voluptatibus!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ****** What's on ****** -->
+        <section class="whats-on w-100">
+            <div class="container">
+                <h3>What's on</h3>
+                <div class="col-md-9 p-0">
+                    <img src="./media/whats-on.jpg" alt="beer" class="w-100">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 hire h5-title">
+                    <span>^^^</span>
+                    <h5>hire</h5>
+                    <h3>a unique space</h3>
+                    <p>interested?</p>
+                    <a href="#">make an enquiry</a>
+                </div>
+
+                <!-- ****** columns paragraph ****** -->
+                <div class="col-md-3 c-p">
+                    <hr>
+                    <hr>
+                    <h5>book a room</h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque cum fugiat doloremque id dolores
+                        tempore, pariatur sit eos modi enim a, nam numquam minus? Optio voluptatum minima saepe fugiat
+                        explicabo!</p>
+                    <hr class="mid-hr">
+                    <hr class="mid-hr">
+                </div>
+                <div class="col-md-3 c-p">
+                    <hr>
+                    <hr>
+                    <h5>special offers</h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque cum fugiat doloremque id dolores
+                        tempore, pariatur sit eos modi enim a, nam numquam minus? Optio voluptatum minima saepe fugiat
+                        explicabo!</p>
+                    <hr>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="./jquery/jquery-3.4.1.min.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            document.querySelector('.loading-animation').style.visibility = 'hidden';
+        })
+    </script>
 </body>
 
 </html>
